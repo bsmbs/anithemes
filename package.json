@@ -1,0 +1,16 @@
+{
+  "name": "anithemes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "pizza61",
+  "license": "MIT",
+  "dependencies": {
+    "animethemes-parser": "^1.0.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0"
+  }
+}

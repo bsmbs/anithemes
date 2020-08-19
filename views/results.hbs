@@ -1,0 +1,28 @@
+{{> search}}
+
+<div class="results">
+    {{#each results}}
+        <div class="result">
+            <div class="result-header">
+                <span class="result-title">{{ this.title }}</span>
+                <a class="result-mal" href="https://myanimelist.net/anime/{{ this.id }}" target="_blank">MAL</a>
+            </div>
+            <div class="result-body">
+                {{#each this.themes}}
+                    <a href="{{this.link}}" target="_blank" class="theme">
+                        <div class="theme-title">
+                            <span class="title-main">{{ this.name }}</span>
+                            <span class="title-sub">{{ this.desc }}</span>
+                        </div>
+                        <span>{{ this.episodes }}</span>
+                        <span>{{ this.notes }}</span>
+                    </a>
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+{{> footer}}
+
+<script src="./js/results.js"></script>

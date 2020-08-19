@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    
+    margin: 0;
+}
+
+.title {
+    font-weight: 600;
+
+    padding: 12px;
+    border-radius: 6px;
+    
+    background: #1552ad;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+
+    margin: 16px;
+
+    width: 100%;
+    max-width: 520px;
+}
+
+#search {
+    border: none;
+    font: inherit;
+
+    border-radius: 6px;
+
+    padding: 12px;
+    flex-grow: 1
+}
+
+#search-btn {
+    outline: none;
+    border: none;
+    background: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 48px;
+    width: 48px;
+
+    transition: 200ms;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    opacity: 0.7;
+}
+
+#search {
+
+}
+
+.results {
+    width: 100%;
+    max-width: 640px;
+    margin: auto;
+}
+
+.result {
+    margin: 8px;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #1552ad;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: white;
+}
+
+.result-title {
+    padding: 12px;
+    font-weight: 700;
+}
+
+.result-mal {
+    padding: 12px;
+    color: white;
+}
+
+.result-body {
+    border: 1px solid #d3d3d3;
+    border-top: 0;
+
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.theme {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    border-bottom: 1px solid #f0f0f0;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.theme:hover {
+    background: #f5f5f5;
+}
+
+.theme-title {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.title-sub {
+    font-size: .7em;
+    color: #818181;
+}
+
+footer {
+    margin: 16px;
+    opacity: 0.7;
+    text-align: center;
+}
+
+footer a {
+    color: teal;
+    text-decoration: none;
+}
