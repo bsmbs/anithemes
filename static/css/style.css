@@ -142,6 +142,10 @@ body {
     cursor: pointer;
 }
 
+.theme:nth-child(even) {
+    background: #eff1f3;
+}
+
 .theme:hover {
     background: #f5f5f5;
     color: teal;
