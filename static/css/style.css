@@ -93,8 +93,15 @@ body {
     opacity: 0.7;
 }
 
-#search {
+.sorting {
+    margin: 12px;
 
+    color: #586069;
+    font-size: .8em;
+}
+
+.sort {
+    cursor: pointer;
 }
 
 .results {
@@ -185,4 +192,8 @@ footer a {
 
 .inactive:hover {
     cursor: not-allowed;
+}
+
+.active {
+    color: teal;
 }

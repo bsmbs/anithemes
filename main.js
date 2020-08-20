@@ -31,6 +31,24 @@ themes.then(db => {
             const r = req.db.filter(x => x.title.toLowerCase().indexOf(req.query.q.toLowerCase()) > -1);
             if(!r) res.sendStatus(404);
 
+            switch(req.query.sort) {
+                case 'year':
+                    r.sort((a, b) => {
+                        if(a.year.slice(-1) == 's' && b.year.slice(-1) == 's') {
+                            return a.year.localeCompare(b.year);
+                        } else if (a.year.slice(-1) == 's') {
+                            return -1;
+                        } else if (b.year.slice(-1) == 's') {
+                            return 1;
+                        }
+                        
+                        return a.year - b.year;
+                    })
+                    break;
+                default:
+                    r.sort((a, b) => a.title.localeCompare(b.title));
+            }
+
             res.render('results', { results: r })
         } else { // TODO fancy error
             res.sendStatus(400);

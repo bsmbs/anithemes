@@ -1,6 +1,12 @@
 {{> search}}
 
 <div class="results">
+    <div class="sorting">
+        <span>Sort by:</span>
+        <span class="sort" id="sort-title">Title</span> | 
+        <span class="sort" id="sort-year">Year</span>
+    </div>
+
     {{#each results}}
         <div class="result">
             <div class="result-header">
