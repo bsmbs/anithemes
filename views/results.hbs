@@ -4,7 +4,7 @@
     {{#each results}}
         <div class="result">
             <div class="result-header">
-                <span class="result-title">{{ this.title }}</span>
+                <span class="result-title">{{ this.title }} ({{ this.year }})</span>
                 <a class="result-mal" href="https://myanimelist.net/anime/{{ this.id }}" target="_blank">MAL</a>
             </div>
             <div class="result-body">
@@ -14,8 +14,8 @@
                             <span class="title-main">{{ this.name }}</span>
                             <span class="title-sub">{{ this.desc }}</span>
                         </div>
-                        <span>{{ this.episodes }}</span>
-                        <span>{{ this.notes }}</span>
+                        <span class="theme-episodes">{{ this.episodes }}</span>
+                        <span class="theme-notes">{{ this.notes }}</span>
                     </a>
                 {{/each}}
             </div>
