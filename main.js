@@ -8,6 +8,7 @@ const api = require('./api/index');
 
 const themes = require('./api/themes');
 themes.then(db => {
+    console.log("Loaded "+db.length+' entries');
     // Inject themes db
     app.use((req, res, next) => {
         req.db = db;
