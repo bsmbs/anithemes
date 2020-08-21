@@ -41,7 +41,7 @@ body {
     margin-right: 6px;
 }
 
-.tab:hover {
+.tab:hover, .item:hover {
     background: teal;
     color: white;
 }
@@ -93,6 +93,19 @@ body {
 #search-btn:hover {
     opacity: 0.7;
 }
+
+.item {
+    display: inline-block;
+
+    color: teal;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+
+    padding: 4px;
+    margin: 10px;
+}
+
 
 .sorting {
     margin: 12px;
@@ -174,6 +187,16 @@ body {
 .title-sub {
     font-size: .7em;
     color: #586069;
+}
+
+.year {
+    font-weight: 700;
+    display: block;
+    text-decoration: none;
+    color: teal;
+    font-size: 1.2em;
+
+    margin: 6px;
 }
 
 footer {
