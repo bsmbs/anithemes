@@ -56,6 +56,11 @@ themes.then(db => {
         }
     })
     
+    app.get('/random', (req, res) => {
+        const r = req.db[Math.floor(Math.random() * req.db.length)];
+        res.render('results', { results: [r] })
+    })
+
     app.use('/api', api);
     
     app.listen(port, () => console.log("Listening on http://localhost:"+port));

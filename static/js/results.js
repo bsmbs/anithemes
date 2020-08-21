@@ -14,10 +14,10 @@ if(sorting == 'year') {
 
 sortYear.addEventListener('click', () => {
     params.set('sort', 'year');
-    location.href = '/search?'+params.toString();
+    location.href = location.pathname+'?'+params.toString();
 })
 
 sortTitle.addEventListener('click', () => {
     params.set('sort', 'title')
-    location.href = '/search?'+params.toString();
+    location.href = location.pathname+'?'+params.toString();
 })
