@@ -15,6 +15,9 @@ themes.then(db => {
         next();
     })
 
+    // Possible years
+    const years = [...new Set(db.map(x => x.year))];
+    years.sort(sortYears).reverse();
 
     app.engine('hbs', handlebars({
         extname: 'hbs'
@@ -34,17 +37,7 @@ themes.then(db => {
 
             switch(req.query.sort) {
                 case 'year':
-                    r.sort((a, b) => {
-                        if(a.year.slice(-1) == 's' && b.year.slice(-1) == 's') {
-                            return a.year.localeCompare(b.year);
-                        } else if (a.year.slice(-1) == 's') {
-                            return -1;
-                        } else if (b.year.slice(-1) == 's') {
-                            return 1;
-                        }
-                        
-                        return a.year - b.year;
-                    })
+                    r.sort((a, b) => sortYears(a.year, b.year));
                     break;
                 default:
                     r.sort((a, b) => a.title.localeCompare(b.title));
@@ -61,8 +54,35 @@ themes.then(db => {
         res.render('results', { results: [r] })
     })
 
+    app.get('/years', (req, res) => {
+        res.render('years', { years })
+    })
+
+    app.get('/year/:id', (req, res) => {
+        if(req.params.id) {
+            const r = req.db.filter(x => x.year == req.params.id);
+            r.sort((a, b) => a.title.localeCompare(b.title));
+            
+            res.render('results', { results: r })
+        } else {
+            res.sendStatus(400);
+        }
+    })
+
     app.use('/api', api);
     
     app.listen(port, () => console.log("Listening on http://localhost:"+port));
 
 })
+
+function sortYears(a, b) {
+    if(a.slice(-1) == 's' && b.slice(-1) == 's') {
+        return a.localeCompare(b);
+    } else if (a.slice(-1) == 's') {
+        return -1;
+    } else if (b.slice(-1) == 's') {
+        return 1;
+    }
+    
+    return a - b;
+}
